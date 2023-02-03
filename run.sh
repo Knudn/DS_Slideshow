@@ -33,6 +33,11 @@ cd /tmp/slide1; nohup flask run -h 192.168.10.204 > slide1_log.txt 2>&1 &
 cd /tmp/slide2; nohup flask run -h 192.168.10.205 > slide2_log.txt 2>&1 &
 cd /tmp/slide3; nohup flask run -h 192.168.10.206 > slide3_log.txt 2>&1 &
 
+#Create folder
+mkdir -p /tmp/slide1/slideshow/static/images/slideshow_images/
+mkdir -p /tmp/slide2/slideshow/static/images/slideshow_images/
+mkdir -p /tmp/slide3/slideshow/static/images/slideshow_images/
+
 #Replaces the database config
 sed -i -e 's/slideshow:password@database:5432\/slideshow/slide1:slide1@127.0.0.1:5432\/slide1/g' /tmp/slide1/config.py
 sed -i -e 's/slideshow:password@database:5432\/slideshow/slide2:slide2@127.0.0.1:5432\/slide2/g' /tmp/slide2/config.py
