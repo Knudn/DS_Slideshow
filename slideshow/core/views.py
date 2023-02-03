@@ -86,7 +86,7 @@ def upload_link():
 
 
 @bp.route('/')
-@login_required
+#@login_required
 def index():
     return render_template('index.html')
 
@@ -102,7 +102,7 @@ def register():
 
 
 @bp.route('/setup')
-@login_required
+#@login_required
 def setup():
     global rotation_speed
 
